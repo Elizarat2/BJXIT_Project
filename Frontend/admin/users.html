@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BJXIT - Gestión de Usuarios</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>BJXIT</h2>
+                <p>Panel de Administración</p>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="users.html" class="active">Gestión de Usuarios</a></li>
+                <li><a href="../staff/products.html">Productos</a></li>
+                <li><a href="../staff/orders.html">Pedidos</a></li>
+                <li><a href="../staff/inventory.html">Inventario</a></li>
+                <li><a href="#" id="logout">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Gestión de Usuarios</h1>
+                <button id="addUserBtn" class="btn">Agregar Usuario</button>
+            </div>
+            
+            <div class="table-container">
+                <table id="usersTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Usuario</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th>Fecha Creación</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Los datos se cargarán con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para agregar/editar usuario -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Agregar Usuario</h2>
+            <form id="userForm">
+                <input type="hidden" id="userId">
+                <div class="form-group">
+                    <label for="modalUsername">Usuario</label>
+                    <input type="text" id="modalUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="modalEmail">Email</label>
+                    <input type="email" id="modalEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="modalPassword">Contraseña</label>
+                    <input type="password" id="modalPassword">
+                </div>
+                <div class="form-group">
+                    <label for="modalRole">Rol</label>
+                    <select id="modalRole" required>
+                        <option value="admin">Administrador</option>
+                        <option value="staff">Personal Administrativo</option>
+                        <option value="sales">Vendedor</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Guardar</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/users.js"></script>
+</body>
+</html>

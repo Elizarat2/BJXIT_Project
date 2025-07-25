@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BJXIT - Gestión de Pedidos</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar para vendedores -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>BJXIT</h2>
+                <p>Panel de Vendedor</p>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="orders.html" class="active">Nuevo Pedido</a></li>
+                <li><a href="order-history.html">Historial de Pedidos</a></li>
+                <li><a href="#" id="logout">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Nuevo Pedido</h1>
+                <div class="user-info">
+                    <span id="usernameDisplay"></span>
+                </div>
+            </div>
+            
+            <div class="order-container">
+                <form id="orderForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="clientName">Nombre del Cliente*</label>
+                            <input type="text" id="clientName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productSelect">Producto*</label>
+                            <select id="productSelect" required>
+                                <option value="">Seleccionar producto</option>
+                                <!-- Los productos se cargarán con JavaScript -->
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quantity">Cantidad*</label>
+                            <input type="number" id="quantity" min="1" value="1" required>
+                        </div>
+                    </div>
+                    
+                    <div class="product-info" id="productInfo" style="display: none;">
+                        <div class="info-card">
+                            <h3>Información del Producto</h3>
+                            <p><strong>Existencia:</strong> <span id="productStock">0</span></p>
+                            <p><strong>Precio unitario:</strong> $<span id="productPrice">0.00</span></p>
+                            <p><strong>Total:</strong> $<span id="orderTotal">0.00</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submitOrder">Realizar Pedido</button>
+                        <button type="button" class="btn btn-secondary" id="clearForm">Limpiar Formulario</button>
+                    </div>
+                </form>
+                
+                <div id="orderSuccess" class="success-message" style="display: none;">
+                    <h3>¡Pedido realizado con éxito!</h3>
+                    <p>Número de pedido: <span id="orderNumber"></span></p>
+                    <p>Cliente: <span id="successClientName"></span></p>
+                    <p>Producto: <span id="successProductName"></span></p>
+                    <p>Cantidad: <span id="successQuantity"></span></p>
+                    <p>Total: $<span id="successTotal"></span></p>
+                    <button class="btn btn-primary" id="newOrderBtn">Hacer otro pedido</button>
+                    <button class="btn btn-secondary" id="printOrderBtn">Imprimir comprobante</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/orders.js"></script>
+</body>
+</html>

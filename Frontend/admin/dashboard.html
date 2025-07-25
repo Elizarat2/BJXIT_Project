@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BJXIT - Admin Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>BJXIT</h2>
+                <p>Panel de Administración</p>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="users.html">Gestión de Usuarios</a></li>
+                <li><a href="../staff/products.html">Productos</a></li>
+                <li><a href="../staff/orders.html">Pedidos</a></li>
+                <li><a href="../staff/inventory.html">Inventario</a></li>
+                <li><a href="#" id="logout">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Dashboard</h1>
+                <div class="user-info">
+                    <span id="usernameDisplay"></span>
+                </div>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Usuarios Registrados</h3>
+                    <p id="userCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Productos en Inventario</h3>
+                    <p id="productCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pedidos Hoy</h3>
+                    <p id="orderCount">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
